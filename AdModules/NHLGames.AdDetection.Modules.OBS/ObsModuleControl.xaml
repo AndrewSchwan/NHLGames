@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="NHLGames.AdDetection.Modules.OBS.ObsModuleControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:obs="clr-namespace:NHLGames.AdDetection.Modules.OBS"
+             mc:Ignorable="d" 
+             d:DataContext="{d:DesignInstance obs:ObsModuleViewModel}" Background="White">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        
+        <Label Grid.Row="0" Grid.Column="0" Content="Game Scene hotkey: "  HorizontalAlignment="Right" Margin="5"/>
+        <TextBox Grid.Row="0" Grid.Column="1" Margin="5" Text="{Binding GameSceneChar}" MaxLength="1" Width="25" VerticalAlignment="Center" />
+        <Label Grid.Row="0" Grid.Column="2" Content="+"  HorizontalAlignment="Right" Margin="5"/>
+        <CheckBox Grid.Row="0" Grid.Column="3" Margin="5" Content="CTRL" IsChecked="{Binding GameSceneCtrl}" VerticalAlignment="Center" />
+        <Label Grid.Row="0" Grid.Column="4" Content="+"  HorizontalAlignment="Right" Margin="5"/>
+        <CheckBox Grid.Row="0" Grid.Column="5" Margin="5" Content="ALT" IsChecked="{Binding GameSceneAlt}" VerticalAlignment="Center" />
+        <Label Grid.Row="0" Grid.Column="6" Content="+"  HorizontalAlignment="Right" Margin="5"/>
+        <CheckBox Grid.Row="0" Grid.Column="7" Margin="5" Content="SHIFT" IsChecked="{Binding GameSceneShift}" VerticalAlignment="Center" />
+
+        <Label Grid.Row="1" Grid.Column="0" Margin="5" Content="Ad Scene hotkey: " HorizontalAlignment="Right" />
+        <TextBox Grid.Row="1" Grid.Column="1"  Margin="5" Text="{Binding AdSceneChar}" MaxLength="1" Width="25" VerticalAlignment="Center" />
+        <Label Grid.Row="1" Grid.Column="2" Content="+"  HorizontalAlignment="Right" Margin="5"/>
+        <CheckBox Grid.Row="1" Grid.Column="3" Margin="5" Content="CTRL" IsChecked="{Binding AdSceneCtrl}" VerticalAlignment="Center" />
+        <Label Grid.Row="1" Grid.Column="4" Content="+"  HorizontalAlignment="Right" Margin="5"/>
+        <CheckBox Grid.Row="1" Grid.Column="5" Margin="5" Content="ALT" IsChecked="{Binding AdSceneAlt}" VerticalAlignment="Center" />
+        <Label Grid.Row="1" Grid.Column="6" Content="+"  HorizontalAlignment="Right" Margin="5"/>
+        <CheckBox Grid.Row="1" Grid.Column="7" Margin="5" Content="SHIFT" IsChecked="{Binding AdSceneShift}" VerticalAlignment="Center" />
+    </Grid>
+</UserControl>

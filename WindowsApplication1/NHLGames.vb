@@ -3,10 +3,11 @@ Imports System.IO
 Imports System.Threading
 Imports Newtonsoft.Json.Linq
 Imports NHLGames.TextboxConsoleOutputRediect
+Imports System
 
 Public Class NHLGames
 
-    Private AvailableGames As New List(Of String)
+    Private AvailableGames As New HashSet(Of String)
     Private Games As New List(Of Game)
 
     Private ReadOnly Property SelectedGame As Game
@@ -30,12 +31,12 @@ Public Class NHLGames
     End Sub
 
     Private Sub NHLGames_Load(sender As Object, e As EventArgs) Handles Me.Load
-        VersionCheck()
-        dtDate.Value = DateTime.Now()
-
         'Setup redirecting console.out to 
         Dim _writer = New TextBoxStreamWriter(RichTextBox)
         Console.SetOut(_writer)
+
+        VersionCheck()
+        dtDate.Value = DateTime.Now()
 
     End Sub
 
@@ -52,9 +53,9 @@ Public Class NHLGames
 
             Dim JSONSchedule As JObject = Downloader.DownloadJSONSchedule(dateTime)
             AvailableGames = Downloader.DownloadAvailableGames()
-            Games = Game.GetGames(JSONSchedule, AvailableGames)
+            GameManager.RefreshGames(dateTime, JSONSchedule, AvailableGames)
 
-            For Each game As Game In Games
+            For Each game As Game In GameManager.GamesList
 
                 'Dim newRow As DataGridViewRow = gridGames.Rows(0).Clone()
 
@@ -209,9 +210,6 @@ Public Class NHLGames
 
     Private Sub btnHosts_Click(sender As Object, e As EventArgs) Handles btnHosts.Click
 
-        'HostsFile.AddEntry("82.196.2.27 mf.svc.nhl.com")
-        HostsFile.AddEntry("146.185.131.14 mf.svc.nhl.com")
-
     End Sub
 
     Private Sub btnWatch_Click(sender As Object, e As EventArgs) Handles btnWatch.Click
@@ -272,6 +270,7 @@ Public Class NHLGames
             args.Stream = game.FrenchStream
         End If
 
+        args.IsMPC = rbMPC.Checked
         If rbMPC.Checked Then
             args.PlayerPath = FileAccess.LocateEXE("mpc-hc64.exe", "\MPC-HC")
         Else
@@ -351,8 +350,8 @@ Public Class NHLGames
         '    strUrl = gridGames.SelectedRows(0).Cells("french" & strServer).Value.Replace("CDN", strCDN)
         'End If
 
-        Dim dialogURL As New dlURL(strUrl)
-        dialogURL.ShowDialog()
+        'Dim dialogURL As New dlURL(strUrl)
+        'dialogURL.ShowDialog()
     End Sub
 
     Private Sub NHLGames_ResizeEnd(sender As Object, e As EventArgs) Handles MyBase.ResizeEnd

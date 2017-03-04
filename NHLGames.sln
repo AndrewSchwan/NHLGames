@@ -1,7 +1,23 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "NHLGames", "WindowsApplication1\NHLGames.vbproj", "{0D71CCEF-DD58-43E3-8794-39203DD6999C}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{80D42D09-D072-4617-9EC2-A09CE2BDC3CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NHLGames.AdDetection.Common", "NHLGames.AdDetection.Common\NHLGames.AdDetection.Common.csproj", "{AE6EBFF7-4C75-4601-A839-861DCE1E22BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NHLGames.AdDetection", "NHLGames.AdDetection\NHLGames.AdDetection.csproj", "{2C851FF7-C1CD-4561-8ECC-D69B937BA622}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NHLGames.AdDetection.Modules.Spotify", "AdModules\NHLGames.AdDetection.Modules.Spotify\NHLGames.AdDetection.Modules.Spotify.csproj", "{B3E6426C-2EF0-41FB-BA26-93C140E716D3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AdModules", "AdModules", "{A517EDE4-24B7-4209-BD10-5A9415B49B3E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateModule", "AdModules\TemplateModule\TemplateModule.csproj", "{3FD4D720-54E2-456A-802E-A52C151653B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NHLGames.AdDetection.Modules.OBS", "AdModules\NHLGames.AdDetection.Modules.OBS\NHLGames.AdDetection.Modules.OBS.csproj", "{D4309ED1-5D5C-4CF6-AB00-2C45D1D97BE9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,8 +29,35 @@ Global
 		{0D71CCEF-DD58-43E3-8794-39203DD6999C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D71CCEF-DD58-43E3-8794-39203DD6999C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D71CCEF-DD58-43E3-8794-39203DD6999C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80D42D09-D072-4617-9EC2-A09CE2BDC3CA}.Debug|Any CPU.ActiveCfg = Debug
+		{80D42D09-D072-4617-9EC2-A09CE2BDC3CA}.Release|Any CPU.ActiveCfg = Release
+		{AE6EBFF7-4C75-4601-A839-861DCE1E22BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE6EBFF7-4C75-4601-A839-861DCE1E22BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE6EBFF7-4C75-4601-A839-861DCE1E22BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE6EBFF7-4C75-4601-A839-861DCE1E22BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C851FF7-C1CD-4561-8ECC-D69B937BA622}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C851FF7-C1CD-4561-8ECC-D69B937BA622}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C851FF7-C1CD-4561-8ECC-D69B937BA622}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C851FF7-C1CD-4561-8ECC-D69B937BA622}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3E6426C-2EF0-41FB-BA26-93C140E716D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3E6426C-2EF0-41FB-BA26-93C140E716D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3E6426C-2EF0-41FB-BA26-93C140E716D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3E6426C-2EF0-41FB-BA26-93C140E716D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FD4D720-54E2-456A-802E-A52C151653B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FD4D720-54E2-456A-802E-A52C151653B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FD4D720-54E2-456A-802E-A52C151653B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FD4D720-54E2-456A-802E-A52C151653B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4309ED1-5D5C-4CF6-AB00-2C45D1D97BE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4309ED1-5D5C-4CF6-AB00-2C45D1D97BE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4309ED1-5D5C-4CF6-AB00-2C45D1D97BE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4309ED1-5D5C-4CF6-AB00-2C45D1D97BE9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B3E6426C-2EF0-41FB-BA26-93C140E716D3} = {A517EDE4-24B7-4209-BD10-5A9415B49B3E}
+		{3FD4D720-54E2-456A-802E-A52C151653B3} = {A517EDE4-24B7-4209-BD10-5A9415B49B3E}
+		{D4309ED1-5D5C-4CF6-AB00-2C45D1D97BE9} = {A517EDE4-24B7-4209-BD10-5A9415B49B3E}
 	EndGlobalSection
 EndGlobal
